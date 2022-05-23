@@ -1,0 +1,110 @@
+[
+    {
+        "_id": 1,
+        "name": "M18 FUEL™ UTILITY FENCING STAPLER",
+        "price": "199",
+        "description": "Our MILWAUKEE® M18 FUEL Utility Fencing Stapler delivers unmatched performance in a completely battery-powered solution. By leveraging our Nitrogen Air Spring technology, POWERSTATE™ Brushless motor, and REDLINK™ Intelligence, this stapler delivers the power to seat staples into the toughest Utility Pole and Fence Post Materials",
+        "img": "https://i.ibb.co/Fhnh1dQ/1.webp",
+        "minQuantity": "200",
+        "availableQuantity": "5000"
+    },
+    {
+        "_id": 2,
+        "name": "M18™ Orbital 1/4 Sheet Sander",
+        "price": "129",
+        "description": "Designed for the professional carpenter, remodeler, and general contractor; our M18™ Orbital 1/4 Sheet Sander is optimized for performance and productivity on the jobsite. This M18™ Orbital 1/4 Sheet Sander offers unmatched power at 13K Max OPM and class-leading dust collection to replace your corded unit.",
+        "img": "https://i.ibb.co/GRk9xRP/2.webp",
+        "minQuantity": "500",
+        "availableQuantity": "10000"
+    },
+    {
+        "_id": 3,
+        "name": "M12 Cable Stapler",
+        "price": "199",
+        "description": "Our MILWAUKEE® M12 Cable Stapler delivers unmatched stapling performance in the most compact battery-powered solution leading to a faster, more efficient rough-in process. Our compact, lightweight design provides users with access to tight stud bays and improved ergonomics when stapling overhead or during difficult-to-reach situations.",
+        "img": "https://i.ibb.co/HzHdqC4/3.webp",
+        "minQuantity": "200",
+        "availableQuantity": "5000"
+    },
+    {
+        "_id": 4,
+        "name": "M18 FUEL™ 15mm Random Orbital Polisher",
+        "price": "250",
+        "description": "Our M18™ FUEL™ 15mm Random Orbital Polisher is the most powerful cordless polisher on the market. By harnessing the power, performance, and run-time of M18™ FUEL™ technology, this tool delivers corded performance while providing you with the freedom to work anywhere.",
+        "img": "https://i.ibb.co/jDZwfrj/4.webp",
+        "minQuantity": "200",
+        "availableQuantity": "5000"
+    },
+    {
+        "_id": 5,
+        "name": "11pc Metric Combination Wrench Set",
+        "price": "49",
+        "description": "Our MILWAUKEE® 11 Piece Metric Combination Wrench Set delivers maximum torque and ultimate user comfort. Our MAX BITE™ Open-End Grip improves the wrench's grip on nuts and bolts, and the geometry reduces rounding and stripping. MAX BITE™ offers 25% More Torque than competitive wrench designs.",
+        "img": "https://i.ibb.co/RhVbVCK/5.png",
+        "minQuantity": "500",
+        "availableQuantity": "10000"
+    },
+    {
+        "_id": 6,
+        "name": "11pc SAE Combination Wrench Set",
+        "price": "49",
+        "description": "Our MILWAUKEE® 11 Piece SAE Combination Wrench Set delivers maximum torque and ultimate user comfort. Our MAX BITE™ Open-End Grip improves the wrench's grip on nuts and bolts, and the geometry reduces rounding and stripping. Our MAX BITE™ offers 25% More Torque than competitive wrench designs.",
+        "img": "https://i.ibb.co/JxcffVM/6.webp",
+        "minQuantity": "500",
+        "availableQuantity": "10000"
+    },
+    {
+        "_id": 7,
+        "name": "25pc 1/4 Drive Metric & SAE Ratchet and Socket Set with FOUR FLAT™ SIDES",
+        "price": "100",
+        "description": "79",
+        "img": "https://i.ibb.co/ZJNfrSS/7.png",
+        "minQuantity": "500",
+        "availableQuantity": "10000"
+    },
+    {
+        "_id": 8,
+        "name": "28oz Milled Face Framing Hammer",
+        "price": "29",
+        "description": "Our 28oz. Milled Face Framing Hammer is designed for the Best Driving Performance. Its precision balanced design provides strong and smooth striking power, while the I-beam handle is designed to withstand bending. ",
+        "img": "https://i.ibb.co/18HF6ct/8.webp",
+        "minQuantity": "500",
+        "availableQuantity": "15000"
+    },
+    {
+        "_id": 9,
+        "name": "M18™ TOP-OFF™ 175W POWER SUPPLY",
+        "price": "299",
+        "description": "Our M18™ TOP-OFF™ 175W Power Supply delivers faster simultaneous power to personal devices and small electronics. Attach any M18™ battery to provide continuous power or recharge devices with (1) AC 120V outlet, (1) USB-C PD port, and (1) USB-A port.",
+        "img": "https://i.ibb.co/2Wn1kc9/9.png",
+        "minQuantity": "100",
+        "availableQuantity": "5000"
+    },
+    {
+        "_id": 10,
+        "name": "M18™ & M12™ Super Charger",
+        "price": "199",
+        "description": "The M18™ & M12™ Super Charger charges batteries up to 4X faster than standard Milwaukee chargers, massively reducing downtime and maximizing productivity. The charger accepts all M18™ & M12™ batteries, providing an upgrade for both M18™ & M12™ systems.",
+        "img": "https://i.ibb.co/Bgs3wnZ/10.png",
+        "minQuantity": "200",
+        "availableQuantity": "5000"
+    },
+    {
+        "_id": 11,
+        "name": "M18™ REDLITHIUM™ HIGH OUTPUT™ CP3.0 Battery",
+        "price": "499",
+        "description": "The M18™ REDLITHIUM™ HIGH OUTPUT™ CP3.0 Battery Pack provides 50% more power and runs 50% cooler vs M18™ REDLITHIUM™ CP battery packs. This increased performance results in the same power and runtime of a M18™ REDLITHIUM™ XC battery in a lighter and more compact package. ",
+        "img": "https://i.ibb.co/zm7tGNL/11.webp",
+        "minQuantity": "100",
+        "availableQuantity": "5000"
+    },
+    {
+        "_id": 12,
+        "name": "M18™ REDLITHIUM™ HIGH OUTPUT™ CP3.0 Battery 2-Pack",
+        "price": "699",
+        "description": "The M18™ REDLITHIUM™ HIGH OUTPUT™ CP3.0 Battery Pack provides 50% more power and runs 50% cooler vs M18™ REDLITHIUM™ CP battery packs. This increased performance results in the same power and runtime of a M18™ REDLITHIUM™ XC battery in a lighter and more compact package. ",
+        "img": "https://i.ibb.co/PCf5tKd/12.webp",
+        "minQuantity": "50",
+        "availableQuantity": "3000"
+    }
+]
