@@ -5,7 +5,7 @@ const Banner = () => {
         <div class="carousel w-full z-0">
             <div id="slide1" class="carousel-item relative w-full">
                 <img src="https://api.lorem.space/image/car?w=800&h=200&hash=8B7BCDC2" alt="" class="w-full" />
-                <div class="hidden md:block absolute text-center border w-full bottom-0 py-2">
+                <div class="hidden md:block absolute text-center  w-full bottom-0 py-2">
                     <h5 class="text-3xl py-2 font-bold">First slide label</h5>
                     <p className='text-xl'>Some representative placeholder content for the first slide.</p>
                 </div>
@@ -15,7 +15,7 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide2" class="carousel-item relative w-full">
-                <img src="https://api.lorem.space/image/car?w=800&h=200&hash=500B67FB" class="w-full" alt='' />                <div class="hidden md:block absolute text-center border w-full bottom-0 py-2">
+                <img src="https://api.lorem.space/image/car?w=800&h=200&hash=500B67FB" class="w-full" alt='' />                <div class="hidden md:block absolute text-center  w-full bottom-0 py-2">
                     <h5 class="text-3xl py-2 font-bold">First slide label</h5>
                     <p className='text-xl'>Some representative placeholder content for the first slide.</p>
                 </div>
@@ -26,7 +26,7 @@ const Banner = () => {
             </div>
             <div id="slide3" class="carousel-item relative w-full">
                 <img src="https://api.lorem.space/image/car?w=800&h=200&hash=A89D0DE6" class="w-full" alt='' />
-                <div class="hidden md:block absolute text-center border w-full bottom-0 py-2">
+                <div class="hidden md:block absolute text-center  w-full bottom-0 py-2">
                     <h5 class="text-3xl py-2 font-bold">First slide label</h5>
                     <p className='text-xl'>Some representative placeholder content for the first slide.</p>
                 </div>
@@ -37,7 +37,7 @@ const Banner = () => {
             </div>
             <div id="slide4" class="carousel-item relative w-full align-top">
                 <img src="https://api.lorem.space/image/car?w=800&h=200&hash=225E6693" class="w-full" />
-                <div class="hidden md:block absolute text-center border w-full bottom-0 py-2">
+                <div class="hidden md:block absolute text-center  w-full bottom-0 py-2">
                     <h5 class="text-3xl py-2 font-bold">First slide label</h5>
                     <p className='text-xl'>Some representative placeholder content for the first slide.</p>
                 </div>
