@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
 import ProductCard from './ProductCard';
 
 const Products = () => {
     const [products, setProducts] = useProducts()
+    const navigate = useNavigate();
     return (
         <div className='my-5' >
             <h1 className='text-center text-4xl font-bold text-white my-5'>Our Products</h1>
@@ -12,6 +14,9 @@ const Products = () => {
                     key={product._id}
                     product={product}
                 ></ProductCard>)}
+            </div>
+            <div className='text-center'>
+                <button onClick={() => navigate('/allProducts')} class="btn btn-primary mt-10">Show All Products</button>
             </div>
         </div >
     );

@@ -5,7 +5,7 @@ const useReviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
         const getReviews = async () => {
-            await axios.get('reviews.json')
+            await axios.get('http://localhost:5000/reviews')
                 .then(res => {
                     // console.log(res.data);
                     setReviews(res.data)
