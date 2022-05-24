@@ -16,7 +16,7 @@ const Products = () => {
                 ></ProductCard>)}
             </div>
             <div className='text-center'>
-                <button onClick={() => navigate('/allProducts')} class="btn btn-primary mt-10">Show All Products</button>
+                <button onClick={() => navigate('/allProducts')} className="btn btn-primary mt-10">Show All Products</button>
             </div>
         </div >
     );

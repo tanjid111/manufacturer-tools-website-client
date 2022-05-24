@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import google from '../../Images/social/google.png'
 import facebook from '../../Images/social/facebook.png'
 import { useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth)
@@ -20,8 +20,16 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const navigate = useNavigate();
-
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     let signInError;
+
+    useEffect(() => {
+        if (user || googleUser || fbUser) {
+            // console.log(user || googleUser || fbUser);
+            navigate(from, { replace: true });;
+        }
+    }, [user, googleUser, fbUser, from, navigate])
 
     if (loading || googleLoading || fbLoading) {
         return <Loading></Loading>
@@ -29,10 +37,6 @@ const Login = () => {
 
     if (error || googleError || fbError) {
         signInError = <p className='text-red-500'>{error?.message || googleError?.message || fbError?.message}</ p>
-    }
-
-    if (user || googleUser || fbUser) {
-        console.log(googleUser);
     }
 
     const onSubmit = data => {

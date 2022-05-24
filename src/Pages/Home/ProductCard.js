@@ -9,18 +9,18 @@ const ProductCard = ({ product }) => {
     }
     return (
 
-        <div class="card w-96 bg-base-100 shadow-xl border border-white">
-            <figure class="px-10 pt-10">
-                <img src={img} alt="Shoes" class="rounded-xl" />
+        <div className="card w-96 bg-base-100 shadow-xl border border-white">
+            <figure className="px-10 pt-10">
+                <img src={img} alt="Shoes" className="rounded-xl" />
             </figure>
-            <div class="card-body items-center">
-                <h2 class="card-title text-white font-bold">{name}</h2>
+            <div className="card-body items-center">
+                <h2 className="card-title text-white font-bold">{name}</h2>
                 <p>{description}</p>
                 <p>Price: ${price}</p>
                 <p>Min order quantity: {minQuantity}</p>
                 <p>Stock Quantity: {availableQuantity}</p>
-                <div class="card-actions">
-                    <button onClick={() => navigateToProductDetail(_id)} class="btn btn-primary">Purchase</button>
+                <div className="card-actions">
+                    <button onClick={() => navigateToProductDetail(_id)} className="btn btn-primary">Purchase</button>
                 </div>
             </div>
         </div>
