@@ -1,0 +1,20 @@
+[
+    {
+        "_id": 101,
+        "review": "Was seeking for warranty on my 25 ft tape measure during almost closing hour. Both staff was super friendly and helpful. Happy with outcome and a brand new tape measure!",
+        "name": "Leanne Graham",
+        "rating": 3.5
+    },
+    {
+        "_id": 102,
+        "review": "Great experience here at this service Center.  Staff were quick and efficient and took in my items that needed service, and ordered a replacement after diagnosing problem.  They said 6-8 week turnaround time, but was surprised when I was contacted within the second week.  Collected my new tool without any issues.",
+        "name": "Ervin Howell",
+        "rating": 4.5
+    },
+    {
+        "_id": 103,
+        "review": "Today I bought a carbon brush assembly, I am very happy with the service and the price. Very nice people. A great place to shop for Milwaukee tools and parts. Thanks.",
+        "name": "Clementine Bauch",
+        "rating": 4.5
+    }
+]
