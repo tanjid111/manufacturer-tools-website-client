@@ -14,6 +14,8 @@ import ResetPassword from './Pages/Login/ResetPassword';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import NotFound from './Pages/Shared/NotFound';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function App() {

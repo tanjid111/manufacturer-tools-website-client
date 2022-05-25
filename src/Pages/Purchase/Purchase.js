@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import useProductDetail from '../../hooks/useProductDetail';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Purchase = () => {
     const [user, loading] = useAuthState(auth);
@@ -10,11 +13,12 @@ const Purchase = () => {
     const [product, setProduct] = useProductDetail(productId)
     const { name, price, description, img, minQuantity, availableQuantity } = product;
     const [error, setError] = useState('')
+    const [totalPrice, setPrice] = useState(null);
     const [disabled, setDisabled] = useState(false)
 
 
-    const handleOrder = (e) => {
-        const orderQuantity = parseInt(e.target.value);
+    const handleOrder = (event) => {
+        const orderQuantity = parseInt(event.target.value);
         console.log(orderQuantity);
         if (orderQuantity < minQuantity) {
             console.log(orderQuantity);
@@ -35,6 +39,9 @@ const Purchase = () => {
 
     const handlePurchase = event => {
         event.preventDefault();
+        const orderQuantity = event.target.orderQuantity.value;
+        const totalPrice = orderQuantity * price;
+        setPrice(totalPrice);
 
         const purchase = {
             product: name,
@@ -43,11 +50,42 @@ const Purchase = () => {
             customerName: user.displayName,
             phone: event.target.address.value,
             address: event.target.phone.value,
-            orderQuantity: event.target.orderQuantity.value
+            orderQuantity,
+            totalPrice
         }
         console.log(purchase);
 
 
+        let newAvailableQuantity = parseInt(availableQuantity) - parseInt(orderQuantity);
+        const newProduct = { ...product, availableQuantity: newAvailableQuantity }
+        setProduct(newProduct);
+
+        //Posting the data to the database with a new collection
+        fetch('http://localhost:5000/purchase', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(purchase)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+
+        //Update Available Quantity in the Database after purchasing product
+        fetch(`http://localhost:5000/products/${productId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast.success('Purchase confirmed')
+            })
     }
     return (
         <div>
@@ -71,12 +109,13 @@ const Purchase = () => {
                 <label className="label">
                     Order Quantity
                 </label>
-                <p className='text-red' style={{ color: 'red' }}> {error}</p>
-
+                <p className='text-red-500'> {error}</p>
                 <input type="number" name='orderQuantity' defaultValue={minQuantity} onChange={handleOrder} placeholder="Order Quantity" className="input input-bordered w-full max-w-xs" required />
+                <p className='text-blue-500'>Total Price: ${totalPrice}</p>
                 <input type="submit" disabled={disabled} value="Purchase" placeholder="Type here" className="btn btn-primary w-full max-w-xs" />
             </form>
-        </div>
+            <ToastContainer />
+        </div >
     );
 };
 
