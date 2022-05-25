@@ -21,14 +21,14 @@ const Register = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth)
 
-    let signInError;
+    let signUpError;
 
     if (loading || googleLoading || fbLoading || updating) {
         return <Loading></Loading>
     }
 
     if (error || googleError || fbError || updateError) {
-        signInError = <p className='text-red-500'>{error?.message || googleError?.message || fbError?.message || updateError?.message}</ p>
+        signUpError = <p className='text-red-500'>{error?.message || googleError?.message || fbError?.message || updateError?.message}</ p>
     }
 
     if (user || googleUser || fbUser) {
@@ -125,7 +125,7 @@ const Register = () => {
                                 {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                             </label>
                         </div>
-                        {signInError}
+                        {signUpError}
                         <input className='btn btn-primary w-full text-white max-w-xs' value='Register' type="submit" />
                     </form>
                     <p>Already have an account? <Link to='/login' className='text-secondary  text-decoration-none'>Please Login</Link></p>
