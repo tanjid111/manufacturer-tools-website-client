@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import useProductDetail from '../../hooks/useProductDetail';
-import 'react-toastify/dist/ReactToastify.css';
 
 
 const Purchase = () => {
@@ -48,8 +47,8 @@ const Purchase = () => {
             price,
             customerEmail: user.email,
             customerName: user.displayName,
-            phone: event.target.address.value,
-            address: event.target.phone.value,
+            phone: event.target.phone.value,
+            address: event.target.address.value,
             orderQuantity,
             totalPrice
         }
@@ -114,7 +113,6 @@ const Purchase = () => {
                 <p className='text-blue-500'>Total Price: ${totalPrice}</p>
                 <input type="submit" disabled={disabled} value="Purchase" placeholder="Type here" className="btn btn-primary w-full max-w-xs" />
             </form>
-            <ToastContainer />
         </div >
     );
 };
