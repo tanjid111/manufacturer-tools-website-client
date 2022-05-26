@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
 
 const useProducts = () => {
     const [products, setProducts] = useState([]);

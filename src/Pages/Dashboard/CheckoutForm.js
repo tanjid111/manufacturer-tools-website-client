@@ -80,6 +80,7 @@ const CheckoutForm = ({ purchase }) => {
                 transactionId: paymentIntent.id
             }
 
+
             fetch(`https://serene-lake-48668.herokuapp.com/purchase/${_id}`, {
                 method: 'PATCH',
                 headers: {
@@ -87,6 +88,24 @@ const CheckoutForm = ({ purchase }) => {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(payment)
+
+            }).then(res => res.json())
+                .then(data => {
+                    setProcessing(false)
+                    console.log(data);
+                })
+
+            const newPurchase = {
+                status: 'pending'
+            }
+
+            fetch(`https://serene-lake-48668.herokuapp.com/purchase/${_id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify(newPurchase)
 
             }).then(res => res.json())
                 .then(data => {
