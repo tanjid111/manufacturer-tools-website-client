@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import google from '../../Images/social/google.png'
 import facebook from '../../Images/social/facebook.png'
 import { useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
@@ -6,6 +6,8 @@ import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
+
 
 const Register = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth)
@@ -21,7 +23,18 @@ const Register = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth)
 
+    const navigate = useNavigate();
+
+    const [token] = useToken(user || googleUser || fbUser);
+
     let signUpError;
+
+    useEffect(() => {
+        if (token) {
+            navigate('/home');
+        }
+
+    }, [navigate, token])
 
     if (loading || googleLoading || fbLoading || updating) {
         return <Loading></Loading>
@@ -31,15 +44,13 @@ const Register = () => {
         signUpError = <p className='text-red-500'>{error?.message || googleError?.message || fbError?.message || updateError?.message}</ p>
     }
 
-    if (user || googleUser || fbUser) {
-        console.log(googleUser);
-    }
+
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        console.log(data)
-        console.log('Username Updated')
+        // console.log(data)
+        // console.log('Username Updated')
     };
 
     return (

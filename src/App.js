@@ -19,6 +19,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddAReview from './Pages/Dashboard/AddAReview';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import AddAProduct from './Pages/Dashboard/AddAProduct';
@@ -49,6 +50,7 @@ function App() {
           <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
           <Route path='manageAllOrders' element={<ManageAllOrders></ManageAllOrders>}></Route>
           <Route path='addProduct' element={<AddAProduct></AddAProduct>}></Route>
+          <Route path='makeAdmin' element={<MakeAdmin></MakeAdmin>}></Route>
           <Route path='manageProducts' element={<ManageProducts></ManageProducts>}></Route>
         </Route>
         <Route path='about' element={<About></About>}></Route>
