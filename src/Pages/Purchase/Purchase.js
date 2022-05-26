@@ -38,7 +38,8 @@ const Purchase = () => {
     const handlePurchase = event => {
         event.preventDefault();
         const orderQuantity = event.target.orderQuantity.value;
-        const totalPrice = orderQuantity * price;
+        const totalPrice = orderQuantity * price
+
         setPrice(totalPrice);
 
         const purchase = {

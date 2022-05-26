@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const PurchaseRow = ({ purchase, index, setDeletePurchase }) => {
-    const { product, orderQuantity, price, totalPrice } = purchase;
+    const { _id, product, orderQuantity, price, totalPrice, paid, transactionId } = purchase;
 
     return (
         <tr>
@@ -11,8 +12,12 @@ const PurchaseRow = ({ purchase, index, setDeletePurchase }) => {
             <td>{orderQuantity}</td>
             <td>{price}</td>
             <td>{totalPrice}</td>
-            <td><label onClick={() => setDeletePurchase(purchase)} htmlFor="delete-confirm-purchase-modal" className="btn btn-success mx-2">Payment</label>
-                <label onClick={() => setDeletePurchase(purchase)} htmlFor="delete-confirm-purchase-modal" className="btn btn-error">Delete</label></td>
+            <td>{(totalPrice && !paid) && <div> <Link to={`/dashboard/payment/${_id}`}><button className="btn btn-success mr-2">Payment</button></Link>
+                <label onClick={() => setDeletePurchase(purchase)} htmlFor="delete-confirm-purchase-modal" className="btn btn-error">Delete</label></div>}</td>
+            {(totalPrice && paid) && <div>
+                <p className='text-success'>Paid</p>
+                <p>Transaction id: <span className='text-success'>{transactionId}</span> </p>
+            </div>}
         </tr>
     );
 };

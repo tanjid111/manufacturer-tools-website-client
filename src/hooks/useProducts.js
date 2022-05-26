@@ -21,8 +21,8 @@ const useProducts = () => {
 export default useProducts;
 
 // const useProducts = () => {
-//     const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/products').then(res => res.json()))
-//     return [products, isLoading, refetch];
+//     const { data, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/products').then(res => res.json()))
+//     return [data, isLoading, refetch];
 // }
 
 // export default useProducts;
