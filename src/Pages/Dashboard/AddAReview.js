@@ -17,7 +17,7 @@ const AddAReview = () => {
         }
         console.log(reviews);
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://serene-lake-48668.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -28,7 +28,7 @@ const AddAProduct = () => {
                         minQuantity: data.minQuantity,
                         img: img
                     }
-                    fetch('http://localhost:5000/products', {
+                    fetch('https://serene-lake-48668.herokuapp.com/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -6,7 +6,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         const getProducts = async () => {
-            await axios.get('http://localhost:5000/products')
+            await axios.get('https://serene-lake-48668.herokuapp.com/products')
                 .then(res => {
                     // console.log(res.data);
                     setProducts(res.data)
@@ -21,7 +21,7 @@ const useProducts = () => {
 export default useProducts;
 
 // const useProducts = () => {
-//     const { data, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/products').then(res => res.json()))
+//     const { data, isLoading, refetch } = useQuery('products', () => fetch('https://serene-lake-48668.herokuapp.com/products').then(res => res.json()))
 //     return [data, isLoading, refetch];
 // }
 

@@ -60,7 +60,7 @@ const Purchase = () => {
         setProduct(newProduct);
 
         //Posting the data to the database with a new collection
-        fetch('http://localhost:5000/purchase', {
+        fetch('https://serene-lake-48668.herokuapp.com/purchase', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -73,7 +73,7 @@ const Purchase = () => {
             })
 
         //Update Available Quantity in the Database after purchasing product
-        fetch(`http://localhost:5000/products/${productId}`, {
+        fetch(`https://serene-lake-48668.herokuapp.com/products/${productId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -89,10 +89,10 @@ const Purchase = () => {
     return (
         <div>
             <h2>Product Detail</h2>
-            <div class="card card-compact border border-white lg:max-w-lg bg-base-100 shadow-xl mx-auto my-10">
+            <div className="card card-compact border border-white lg:max-w-lg bg-base-100 shadow-xl mx-auto my-10">
                 <figure><img src={img} alt="" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title font-bold">{name}</h2>
+                <div className="card-body">
+                    <h2 className="card-title font-bold">{name}</h2>
                     <p>{description}</p>
                     <p>Price: ${price}</p>
                     <p>Minimum order quantity: {minQuantity}</p>

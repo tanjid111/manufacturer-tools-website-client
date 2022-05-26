@@ -5,7 +5,7 @@ const useProductDetail = (productId) => {
     const [product, setProduct] = useState({});
     useEffect(() => {
         const getProductDetail = async () => {
-            await axios.get(`http://localhost:5000/products/${productId}`)
+            await axios.get(`https://serene-lake-48668.herokuapp.com/products/${productId}`)
                 .then(res => {
                     // console.log(res.data);
                     setProduct(res.data)
