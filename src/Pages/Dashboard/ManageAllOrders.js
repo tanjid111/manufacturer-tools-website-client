@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
+import DeleteConfirmPurchaseModal from './DeleteConfirmPurchaseModal';
 
 const ManageAllOrders = () => {
     const [status, setStatus] = useState('pending');
-
+    const [deletePurchase, setDeletePurchase] = useState(null);
     const [purchases, setPurchases] = useState([]);
-
+    //http://localhost:5000
+    // https://serene-lake-48668.herokuapp.com/purchase
     useEffect(() => {
         fetch('https://serene-lake-48668.herokuapp.com/purchase', {
             method: 'GET',
@@ -26,6 +28,9 @@ const ManageAllOrders = () => {
         setStatus('shipped')
     }
 
+    const handleDelete = id => {
+
+    }
 
     return (
         <div>
@@ -53,11 +58,12 @@ const ManageAllOrders = () => {
                                 <td>{p.totalPrice}</td>
                                 <td>
                                     {(p.paid && (status === 'pending')) && <div>
-                                        <p className='text-success'>{status}</p>
+                                        <p className='text-success'>{p.stat}</p>
                                         <button onClick={() => handleShip(p._id)} className='btn btn-xs btn-success'>Ship</button>
                                     </div>}
                                     {!p.paid && <div>
                                         <p className='text-red-600'>UnPaid</p>
+                                        <label onClick={() => setDeletePurchase(p)} htmlFor="delete-confirm-purchase-modal" className="btn btn-error">Delete</label>
                                         {/* <p>Transaction id: <span className='text-success'>{a.transactionId}</span> </p> */}
                                     </div>}
                                 </td>
@@ -67,6 +73,12 @@ const ManageAllOrders = () => {
                     </tbody>
                 </table>
             </div>
+            {deletePurchase && <DeleteConfirmPurchaseModal
+                deletePurchase={deletePurchase}
+                purchases={purchases}
+                setPurchases={setPurchases}
+                setDeletePurchase={setDeletePurchase}
+            ></DeleteConfirmPurchaseModal>}
         </div>
     );
 };

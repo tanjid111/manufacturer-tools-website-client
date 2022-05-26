@@ -50,7 +50,8 @@ const Purchase = () => {
             phone: event.target.phone.value,
             address: event.target.address.value,
             orderQuantity,
-            totalPrice
+            totalPrice,
+            stat: 'pending'
         }
         console.log(purchase);
 
