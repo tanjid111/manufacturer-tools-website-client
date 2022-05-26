@@ -9,7 +9,7 @@ const ManageAllOrders = () => {
     const [purchases, setPurchases] = useState([]);
 
     useEffect(() => {
-        fetch('https://serene-lake-48668.herokuapp.com/purchase', {
+        fetch('https://serene-lake-48668.herokuapp.com/purchase1', {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
