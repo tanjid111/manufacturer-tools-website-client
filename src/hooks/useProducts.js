@@ -19,10 +19,3 @@ const useProducts = () => {
 };
 
 export default useProducts;
-
-// const useProducts = () => {
-//     const { data, isLoading, refetch } = useQuery('products', () => fetch('https://serene-lake-48668.herokuapp.com/products').then(res => res.json()))
-//     return [data, isLoading, refetch];
-// }
-
-// export default useProducts;
