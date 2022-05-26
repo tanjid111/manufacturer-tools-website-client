@@ -75,7 +75,7 @@ const ManageAllOrders = () => {
 
 
                                     {!p.paid && <div>
-                                        <p className='text-red-600'>UnPaid</p>
+                                        <p className='text-red-600'>Unpaid</p>
                                         <label onClick={() => setDeletePurchase(p)} htmlFor="delete-confirm-purchase-modal" className="btn btn-error">Delete</label>
                                         {/* <p>Transaction id: <span className='text-success'>{a.transactionId}</span> </p> */}
                                     </div>}
