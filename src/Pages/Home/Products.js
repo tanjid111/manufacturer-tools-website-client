@@ -4,7 +4,7 @@ import useProducts from '../../hooks/useProducts';
 import ProductCard from './ProductCard';
 
 const Products = () => {
-    const [products, setProducts] = useProducts()
+    const [products] = useProducts()
     const navigate = useNavigate();
     return (
         <div className='my-5' >

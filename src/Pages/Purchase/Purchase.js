@@ -109,7 +109,7 @@ const Purchase = () => {
                 </label>
                 <p className='text-red-500'> {error}</p>
                 <input type="number" name='orderQuantity' defaultValue={minQuantity} onChange={handleOrder} placeholder="Order Quantity" className="input input-bordered w-full max-w-xs" required />
-                <p className='text-blue-500'>Total Price: ${ }</p>
+                <p className='text-blue-500'>Total Price: ${totalPrice}</p>
                 <input type="submit" disabled={disabled} value="Purchase" placeholder="Type here" className="btn btn-primary w-full max-w-xs" />
             </form>
         </div >

@@ -3,7 +3,7 @@ import useProducts from '../../hooks/useProducts';
 import ProductCard from '../Home/ProductCard';
 
 const AllProducts = () => {
-    const [products, setProducts] = useProducts()
+    const [products] = useProducts()
     return (
         <div>
             <div className='my-5' >
