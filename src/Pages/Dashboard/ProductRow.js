@@ -1,6 +1,4 @@
 import React from 'react';
-import { toast } from 'react-toastify';
-
 
 const ProductRow = ({ product, index, setDeleteProduct }) => {
     const { name, price, img, quantityAvailable } = product;

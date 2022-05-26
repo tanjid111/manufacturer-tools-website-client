@@ -3,11 +3,14 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
+import DeleteConfirmPurchaseModal from './DeleteConfirmPurchaseModal';
+import PurchaseRow from './PurchaseRow';
 
 const MyOrders = () => {
     const [purchases, setPurchases] = useState([]);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
+    const [deletePurchase, setDeletePurchase] = useState(null);
 
     useEffect(() => {
         if (user) {
@@ -32,7 +35,7 @@ const MyOrders = () => {
                     setPurchases(data)
                 })
         }
-    }, [user])
+    }, [user, navigate])
 
     return (
         <div>
@@ -47,26 +50,27 @@ const MyOrders = () => {
                             <th>Order Quantity</th>
                             <th>Price/Qty</th>
                             <th>Total Price</th>
-                            <th></th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            purchases.map((purchase, index) => <tr key={index}>
-                                <th>{index + 1}</th>
-                                <td>{purchase.product}</td>
-                                <td>{purchase.orderQuantity}</td>
-                                <td>{purchase.price}</td>
-                                <td>{purchase?.totalPrice}</td>
-                                {/* <td>
-                                    <button onClick={() => { handleDelete(purchase._id) }} className='btn btn-xs btn-error'>Delete</button>
+                            purchases.map((purchase, index) => <PurchaseRow
+                                key={purchase._id}
+                                purchase={purchase}
+                                index={index}
+                                setDeletePurchase={setDeletePurchase}
+                            ></PurchaseRow>)
 
-                                </td> */}
-                            </tr>)
                         }
                     </tbody>
                 </table>
             </div>
+            {deletePurchase && <DeleteConfirmPurchaseModal
+                deletePurchase={deletePurchase}
+                // refetch={refetch}
+                setDeletePurchase={setDeletePurchase}
+            ></DeleteConfirmPurchaseModal>}
         </div >
     );
 };
