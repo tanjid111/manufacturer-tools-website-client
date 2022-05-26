@@ -10,7 +10,8 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
 import RequireAuth from './Pages/Login/RequireAuth';
-import ResetPassword from './Pages/Login/ResetPassword';
+import RequireAdmin from './Pages/Login/RequireAuth';
+import ResetPassword from './Pages/Login/RequireAdmin';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import NotFound from './Pages/Shared/NotFound';
@@ -50,7 +51,7 @@ function App() {
           <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
           <Route path='manageAllOrders' element={<ManageAllOrders></ManageAllOrders>}></Route>
           <Route path='addProduct' element={<AddAProduct></AddAProduct>}></Route>
-          <Route path='makeAdmin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
           <Route path='manageProducts' element={<ManageProducts></ManageProducts>}></Route>
         </Route>
         <Route path='about' element={<About></About>}></Route>
