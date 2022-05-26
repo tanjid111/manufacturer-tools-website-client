@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteConfirmModal = ({ deleteProduct, refetch, setDeleteProduct }) => {
+const DeleteConfirmModal = ({ deleteProduct, setDeleteProduct, setProducts, products }) => {
     const { name, _id } = deleteProduct;
     const handleDelete = () => {
         fetch(`http://localhost:5000/products/${_id}`, {
@@ -16,7 +16,8 @@ const DeleteConfirmModal = ({ deleteProduct, refetch, setDeleteProduct }) => {
                 if (data.deletedCount) {
                     toast.success(`Product ${name} is deleted`)
                     setDeleteProduct(null);
-                    // refetch();
+                    const remaining = products.filter(product => product._id !== _id);
+                    setProducts(remaining)
                 }
             })
     }

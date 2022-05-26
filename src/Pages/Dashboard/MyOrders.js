@@ -68,7 +68,8 @@ const MyOrders = () => {
             </div>
             {deletePurchase && <DeleteConfirmPurchaseModal
                 deletePurchase={deletePurchase}
-                // refetch={refetch}
+                purchases={purchases}
+                setPurchases={setPurchases}
                 setDeletePurchase={setDeletePurchase}
             ></DeleteConfirmPurchaseModal>}
         </div >

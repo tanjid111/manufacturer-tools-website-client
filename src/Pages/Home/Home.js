@@ -4,6 +4,7 @@ import BusinessSummary from './BusinessSummary';
 import Location from './Location';
 import Products from './Products';
 import Reviews from './Reviews';
+import Subscribe from './Subscribe';
 import Systems from './Systems';
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <BusinessSummary></BusinessSummary>
             <Reviews></Reviews>
             <Location></Location>
+            <Subscribe></Subscribe>
         </div>
     );
 };

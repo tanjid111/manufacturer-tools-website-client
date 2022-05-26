@@ -4,7 +4,7 @@ import DeleteConfirmModal from './DeleteConfirmModal';
 import ProductRow from './ProductRow';
 
 const ManageProducts = () => {
-    const [products] = useProducts();
+    const [products, setProducts] = useProducts();
     const [deleteProduct, setDeleteProduct] = useState(null);
     return (
         <div>
@@ -34,6 +34,8 @@ const ManageProducts = () => {
                 </table>
             </div>
             {deleteProduct && <DeleteConfirmModal
+                products={products}
+                setProducts={setProducts}
                 deleteProduct={deleteProduct}
                 // refetch={refetch}
                 setDeleteProduct={setDeleteProduct}
