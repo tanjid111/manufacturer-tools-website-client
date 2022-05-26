@@ -4,11 +4,10 @@ import Loading from '../Shared/Loading';
 import DeleteConfirmPurchaseModal from './DeleteConfirmPurchaseModal';
 
 const ManageAllOrders = () => {
-    const [status, setStatus] = useState('pending');
+    const [status, setStatus] = useState('');
     const [deletePurchase, setDeletePurchase] = useState(null);
     const [purchases, setPurchases] = useState([]);
-    //http://localhost:5000
-    // https://serene-lake-48668.herokuapp.com/purchase
+
     useEffect(() => {
         fetch('https://serene-lake-48668.herokuapp.com/purchase', {
             method: 'GET',
@@ -24,13 +23,27 @@ const ManageAllOrders = () => {
             })
     }, [])
 
-    const handleShip = id => {
-        setStatus('shipped')
+    const handleShip = _id => {
+        const newPurchase = {
+            stat: 'shipped'
+        }
+
+        fetch(`https://serene-lake-48668.herokuapp.com/purchase/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify(newPurchase)
+
+        }).then(res => res.json())
+            .then(data => {
+
+                console.log(data);
+            })
     }
 
-    const handleDelete = id => {
 
-    }
 
     return (
         <div>
@@ -57,10 +70,10 @@ const ManageAllOrders = () => {
                                 <td>{p.product}</td>
                                 <td>{p.totalPrice}</td>
                                 <td>
-                                    {(p.paid && (status === 'pending')) && <div>
-                                        <p className='text-success'>{p.stat}</p>
-                                        <button onClick={() => handleShip(p._id)} className='btn btn-xs btn-success'>Ship</button>
-                                    </div>}
+                                    {(p.paid && p.stat === 'pending') && <button onClick={() => handleShip(p._id)} className='btn btn-xs btn-success'>Ship</button>}
+                                    {p.paid && <p className='text-success'>{p.stat}</p>}
+
+
                                     {!p.paid && <div>
                                         <p className='text-red-600'>UnPaid</p>
                                         <label onClick={() => setDeletePurchase(p)} htmlFor="delete-confirm-purchase-modal" className="btn btn-error">Delete</label>

@@ -41,12 +41,12 @@ const MyOrders = () => {
         <div>
             <h2 className='text-2xl'>My Orders: {purchases.length}</h2>
             <div className="overflow-x-auto">
-                <table className="table w-full">
+                <table className="table table-compact w-full">
 
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Product</th>
+                            <th className='w-1/3'>Product</th>
                             <th>Order Quantity</th>
                             <th>Price/Qty</th>
                             <th>Total Price</th>
